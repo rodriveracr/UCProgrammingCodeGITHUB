@@ -1,5 +1,8 @@
-from app import create_app, db
-from app.models import User
+# Import application objects from ``__init__`` instead of ``app`` to avoid
+# importing this script as a module, which leads to circular imports when the
+# script is executed directly.
+from __init__ import create_app, db
+from models import User
 
 app = create_app()
 

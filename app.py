@@ -1,4 +1,8 @@
-from app import create_app, mail
+# Import the application factory and mail instance from the package's
+# ``__init__`` module instead of importing from ``app``. Importing from ``app``
+# causes this module to import itself, leading to a circular import error when
+# executing scripts directly.
+from __init__ import create_app, mail
 from flask_mail import Message
 
 app = create_app()
