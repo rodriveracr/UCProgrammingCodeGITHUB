@@ -1,5 +1,7 @@
-from app import create_app, db
-from app.models import User
+# Import the application objects from ``__init__`` instead of ``app`` to prevent
+# this script from importing itself when run directly.
+from __init__ import create_app, db
+from models import User
 
 app = create_app()
 
